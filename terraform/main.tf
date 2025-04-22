@@ -113,22 +113,22 @@ resource "aws_iam_role_policy_attachment" "s3_access_attachment" {
 resource "aws_s3_object" "app_py" {
   bucket = aws_s3_bucket.app_bucket.bucket
   key    = "app.py"
-  source = "../FW/app.py"
-  etag   = filemd5("../FW/app.py")
+  source = "../app.py"
+  etag   = filemd5("../app.py")
 }
 
 resource "aws_s3_object" "fw_transfer_py" {
   bucket = aws_s3_bucket.app_bucket.bucket
   key    = "FW_transfer.py"
-  source = "../FW/FW_transfer.py"
-  etag   = filemd5("../FW/FW_transfer.py")
+  source = "../FW_transfer.py"
+  etag   = filemd5("../FW_transfer.py")
 }
 
 resource "aws_s3_object" "requirements_txt" {
   bucket = aws_s3_bucket.app_bucket.bucket
   key    = "requirements.txt"
-  source = "../FW/requirements.txt"
-  etag   = filemd5("../FW/requirements.txt")
+  source = "../requirements.txt"
+  etag   = filemd5("../requirements.txt")
 }
 
 # EC2インスタンスの作成
